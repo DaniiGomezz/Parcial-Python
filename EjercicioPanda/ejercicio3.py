@@ -20,6 +20,7 @@ calificaciones = [
 df = pd.DataFrame(calificaciones)
 
 
+print("punto A")
 
 # A) Calcular el promedio de calificaciones para cada asignatura
 promedio_matematicas = df['matematicas'].mean()
@@ -35,7 +36,7 @@ print("Promedio de historia:", promedio_historia)
 
 
 # B) Encuentra a los estudiantes que tienen las calificaciones más altas en cada asignatura y mostralos junto con sus respectivas calificaciones.
-
+print("punto B")
 # Encuentra las calificaciones máximas en cada asignatura
 maxima_matematicas = df['matematicas'].max()
 maxima_ciencias = df['ciencias'].max()
@@ -64,12 +65,19 @@ df_top = pd.DataFrame({
 #muestra por la consola el resultado final
 print(df_top)
 
+print("punto C")
+#C) 
+aprobados = df.loc[:, ["matematicas", "ciencias", "historia"]] >= 60
 
+# Calcular el porcentaje de aprobados para cada asignatura
+porcentaje_aprobados = aprobados.mean() * 100
 
+print("Porcentaje de estudiantes que aprobaron cada asignatura:")
+print(porcentaje_aprobados)
 
 # D)Crear un DataFrame que incluya dos columnas una para el nombre del estudiante y la otra para el promedio de las notas de las asignaturas.
 
-
+print("punto D")
 # Calcula el promedio de las calificaciones para cada estudiante
 df["promedio"] = df[["matematicas", "ciencias", "historia"]].mean(axis=1)
 
